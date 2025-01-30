@@ -26,9 +26,3 @@ function draw() {
   circle(485, 180, 25);
 
 }
-
-function setup() {
-  createCanvas(600, 400);
-  angleMode(DEGREES); 
-}
-
