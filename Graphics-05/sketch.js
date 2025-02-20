@@ -11,7 +11,6 @@ let timeRemaining = 30;
 let lastSecond = 30;
 let speedMultiplier = 1;
 let spriteSheet;
-let initialBugCount = 20;
 const SPRITE_COLS = 4;
 const SPRITE_ROWS = 2;
 const SPRITE_WIDTH = 80; //ADJUST IF NEEDED
@@ -26,7 +25,7 @@ class Bug {
   constructor() {
     this.x = random(width);
     this.y = random(height);
-    this.speed = 2;
+    this.speed = 3;
     this.direction = createVector(random(-1, 1), random(-1, 1)).normalize();
     this.isSquished = false;
     this.squishTime = 0;
@@ -174,15 +173,15 @@ function mousePressed() {
     for (let bug of bugs) {
       if (mouseButton === LEFT && bug.checkClick(mouseX, mouseY)){
         squishCount++;
-        speedMultiplier += 0.25;
+        speedMultiplier += 0.025;
 
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 1; i++) {
           bugs.push(new Bug());
         }
 
         for (let b of bugs) { 
           if (!b.isSquished) {
-            b.speed *= .85;
+            b.speed *= 1.00;
           }
           
         }
